@@ -5,13 +5,16 @@ const CommentList = ({ postId }) => {
   const [comments, setComments] = useState([])
 
   const fetchComments = async () => {
-    const res = await axios.get(`http://localhost:4001/posts/${postId}/comments`)
+    const res = await axios.get(
+      `http://localhost:4001/posts/${postId}/comments`
+    )
     console.log(res.data)
     setComments(res.data)
   }
 
   useEffect(() => {
     fetchComments()
+    // eslint-disable-next-line no-use-before-define
   }, [])
 
   const renderedComments = comments.map((comment) => {
