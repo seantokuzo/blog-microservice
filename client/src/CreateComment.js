@@ -8,7 +8,7 @@ const CreateComment = ({ postId }) => {
     e.preventDefault()
 
     const res = await axios.post(
-      `http://localhost:4001/posts/${postId}/comments`,
+      `http://posts.com/posts/${postId}/comments`,
       {
         content
       }
